@@ -1,0 +1,62 @@
+# NiroRPI development Board
+Customizing RPI2040 devboard and learning! \
+[![View PCB on KiCanvas](https://hack.club/pcb-badge)](https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2FNurazkhan%2FNiroRPI-devboard%2Ftree%2Fmain%2FPCB)
+![alt text](<Screenshot 2026-10-24 164147.png>)
+
+---
+The NiroRPI board consists of several parts.
+First of all it is MCU RPI2040 the brain of the board.
+Then you have to gave a memory to the brain, for which QSPI flash memory is responsible for. Another think dev board requires is clock, all crystall oscillator included in the design.
+Also, we can't forget about power for which we use USB type C female port.
+And we have to decrease it from 5V to 3V3 by linear stabilizator. Apart from that we have to handle noises for which decoupling capacitors where used. Of course you have to add your soul when making project. My piece of soul is in silksreen art.
+ 
+---
+## BOM
+| Name | Value | Quantity | Price | Min Buy Price | Link |
+|---|---|---|---|---|---|
+| 0402 Capacitor | 1uF | 2pc | $0.04/pc |$2.0| [link](https://www.aliexpress.com/item/1005007464553853.html?spm=a2g0o.productlist.main.1.33eb13c3a1sww9&algo_pvid=1ce3280b-b1ce-44b2-9360-706b783c74bf&algo_exp_id=1ce3280b-b1ce-44b2-9360-706b783c74bf-0&pdp_ext_f=%7B%22order%22%3A%227563%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%211.90%211.90%21%21%2113.91%2113.91%21%402101d3fe17928380017475844e0d06%2112000040865339092%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=Z1IctUtDfu5q&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007464553853%7C_p_origin_prod%3A) |
+| 0402 Capacitor | 0.1uF | 10pc | $0.01/pc |$1.24 | [link](https://www.aliexpress.com/item/1005007464553853.html?spm=a2g0o.productlist.main.1.33eb13c3a1sww9&algo_pvid=1ce3280b-b1ce-44b2-9360-706b783c74bf&algo_exp_id=1ce3280b-b1ce-44b2-9360-706b783c74bf-0&pdp_ext_f=%7B%22order%22%3A%227563%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%211.90%211.90%21%21%2113.91%2113.91%21%402101d3fe17928380017475844e0d06%2112000040865339092%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=Z1IctUtDfu5q&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007464553853%7C_p_origin_prod%3A) |
+| 0603 Capacitor | 10uF | 2pc |$0.04|$1.9 | [link](https://www.aliexpress.com/item/1005007464553853.html?spm=a2g0o.productlist.main.9.87fc746aci5ff1&algo_pvid=1cc057ad-403e-4677-b3e2-52de9274ed6d&algo_exp_id=1cc057ad-403e-4677-b3e2-52de9274ed6d-8&pdp_ext_f=%7B%22order%22%3A%227563%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%211.90%211.90%21%21%2113.91%2113.91%21%402103128817928387387008370e0fea%2112000040865339092%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=COmJyo83HHxI&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007464553853%7C_p_origin_prod%3A) |
+| 0402 Capacitor | 33pF | 2pc | $0.0033| $0.66| [link](https://www.aliexpress.com/item/1005004406012464.html?spm=a2g0o.productlist.main.1.23ab6a5cs8UpD1&algo_pvid=e5c2a926-7419-43f5-b501-cb0d19053b9e&algo_exp_id=e5c2a926-7419-43f5-b501-cb0d19053b9e-0&pdp_ext_f=%7B%22order%22%3A%2212%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%210.68%210.66%21%21%210.74%210.73%21%402101c28d17928387970034540e0f4e%2112000029066067966%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=WZNt2OROy7tG&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005004406012464%7C_p_origin_prod%3A) |
+| USB-C Receptacle (14P USB 2.0) | TYPE-C-31-M-12 | 1pc |$0.242 |$2.42 | [link](https://www.aliexpress.com/item/1005005243706874.html?spm=a2g0o.productlist.main.10.12eaHq6sHq6sGj&algo_pvid=13872c83-4cb9-495c-b3a4-1da70454aa21&algo_exp_id=13872c83-4cb9-495c-b3a4-1da70454aa21-9&pdp_ext_f=%7B%22order%22%3A%2231%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%212.43%212.42%21%21%212.66%212.65%21%402101d3fe17928388447731083e0ffd%2112000047882262162%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=PttTDNerzeWs&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005005243706874%7C_p_origin_prod%3A) |
+| 1x20 Pin Header 2.54mm Vertical | 20-Pin | 3pc | $0.13|$1.3| [link](https://www.aliexpress.com/item/32852994833.html?spm=a2g0o.productlist.main.6.404a3506hWddBQ&algo_pvid=d78fc8ff-5bb9-4a57-bbb9-f1c1981b464a&algo_exp_id=d78fc8ff-5bb9-4a57-bbb9-f1c1981b464a-5&pdp_ext_f=%7B%22order%22%3A%2247%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%211.29%211.29%21%21%211.41%211.41%21%402103128917928388958431185e0fb8%2165253578747%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=S8hGZYq8zqir&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A32852994833%7C_p_origin_prod%3A) |
+| 0402 Resistor | 5.1K | 2pc |$0.0096 | $0.96| [link](https://www.aliexpress.com/item/1005008478030316.html?spm=a2g0o.productlist.main.1.16225234B0zsth&algo_pvid=92a6730b-c8ab-46c1-be69-e29c4405b7e8&algo_exp_id=92a6730b-c8ab-46c1-be69-e29c4405b7e8-0&pdp_ext_f=%7B%22order%22%3A%2273%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%210.96%210.96%21%21%217.02%217.02%21%402101c28d17928390013176345e0e88%2112000045322226533%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=txJdVtTcEzpI&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008478030316%7C_p_origin_prod%3A) |
+| 0402 Resistor | 27R | 2pc | $0.0096|$0.96| | [link](https://www.aliexpress.com/item/1005008478030316.html?spm=a2g0o.productlist.main.1.16225234B0zsth&algo_pvid=92a6730b-c8ab-46c1-be69-e29c4405b7e8&algo_exp_id=92a6730b-c8ab-46c1-be69-e29c4405b7e8-0&pdp_ext_f=%7B%22order%22%3A%2273%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%210.96%210.96%21%21%217.02%217.02%21%402101c28d17928390013176345e0e88%2112000045322226533%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=txJdVtTcEzpI&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008478030316%7C_p_origin_prod%3A) |
+| 0402 Resistor | 1K | 2pc |$0.0096 | $0.96|| [link](https://www.aliexpress.com/item/1005008478030316.html?spm=a2g0o.productlist.main.1.16225234B0zsth&algo_pvid=92a6730b-c8ab-46c1-be69-e29c4405b7e8&algo_exp_id=92a6730b-c8ab-46c1-be69-e29c4405b7e8-0&pdp_ext_f=%7B%22order%22%3A%2273%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%210.96%210.96%21%21%217.02%217.02%21%402101c28d17928390013176345e0e88%2112000045322226533%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=txJdVtTcEzpI&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008478030316%7C_p_origin_prod%3A) |
+| 0402 Resistor | 10K | 1pc | $0.0096| $0.96|| [link](https://www.aliexpress.com/item/1005008478030316.html?spm=a2g0o.productlist.main.1.16225234B0zsth&algo_pvid=92a6730b-c8ab-46c1-be69-e29c4405b7e8&algo_exp_id=92a6730b-c8ab-46c1-be69-e29c4405b7e8-0&pdp_ext_f=%7B%22order%22%3A%2273%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%210.96%210.96%21%21%217.02%217.02%21%402101c28d17928390013176345e0e88%2112000045322226533%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=txJdVtTcEzpI&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005008478030316%7C_p_origin_prod%3A) |
+| Push Button Switch (SPST-NO Alps SKRK) | SW_Push | 1pc |$0.006 |$3 | [link](https://www.aliexpress.com/ssr/300000512/BundleDealsDutyCovered?spm=a2g0o.productlist.main.23.7e7a2c00YkpvcS&businessCode=guide&productIds=1005004297433455:12000028671475705&pha_manifest=ssr&_immersiveMode=true&disableNav=YES&sourceName=SEARCHProduct&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005004297433455%7C_p_origin_prod%3A&pvid=fc01f38c-ee70-429d-b7e2-153687f90f3d) |
+| Microcontroller QFN-56 | RP2040 | 1pc |$2.32|$4.64 | [link](https://www.aliexpress.com/item/1005006481247856.html?spm=a2g0o.productlist.main.4.5a505ec380vjfe&algo_pvid=3f1055b4-faed-4b31-8ca6-28018250ebfc&algo_exp_id=3f1055b4-faed-4b31-8ca6-28018250ebfc-3&pdp_ext_f=%7B%22order%22%3A%2229%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.64%214.64%21%21%2133.87%2133.87%21%402101c69517928391673802988e0ebd%2112000037358586395%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=oizp8OHJRp5m&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005006481247856%7C_p_origin_prod%3A) |
+| LDO Voltage Regulator SOT-23 | MCP1700x-330xxTT | 1pc |$0.235 |$2.35| [link](https://www.aliexpress.com/item/1005010457470744.html?spm=a2g0o.productlist.main.2.91dc494alLmY3r&algo_pvid=7206a0b7-3823-4af5-9f48-fe7043e7341e&algo_exp_id=7206a0b7-3823-4af5-9f48-fe7043e7341e-1&pdp_ext_f=%7B%22order%22%3A%222%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%212.35%212.35%21%21%212.57%212.57%21%402101de2517928392481461068e10fb%2112000052477027046%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=GqBMlJZrs2cj&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005010457470744%7C_p_origin_prod%3A) |
+| NOR Flash Memory USON-8 (128Mb) | W25Q128JVS | 1pc |$0.61|$0.61 | [link](https://www.aliexpress.com/item/1005009949894136.html?spm=a2g0o.productlist.main.2.5a14104daznULO&algo_pvid=a36b1a77-d764-4ee7-8480-798defc4a4a6&algo_exp_id=a36b1a77-d764-4ee7-8480-798defc4a4a6-1&pdp_ext_f=%7B%22order%22%3A%22340%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%210.62%210.61%21%21%214.52%214.52%21%40210311c217928392961714942e0ff9%2112000050659133711%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=moexlDes1oED&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005009949894136%7C_p_origin_prod%3A) |
+| Crystal SMD 3225-4Pin | 12MHz | 1pc | $0.3| $2.75| [link](https://www.aliexpress.com/item/1005007282073350.html?spm=a2g0o.productlist.main.1.42a54506vpAb9t&algo_pvid=00cde798-dc2c-4c5d-b74c-cf3e82a695be&algo_exp_id=00cde798-dc2c-4c5d-b74c-cf3e82a695be-0&pdp_ext_f=%7B%22order%22%3A%2210%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%212.75%212.75%21%21%213.01%213.01%21%402101d9ef17928393249016774e10b8%2112000040057852652%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=GtFPoNpVzfLV&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007282073350%7C_p_origin_prod%3A) |
+
+*total: ~$26 (if handsoldered) and $69 if to use JLCPCB assempbly* \
+**pinheader needs 3 pc, cause instead of ordering 3pin pinheader, you can break from 20pin pinheaders. Anyways you need to order 5 at least, so its cheaper not to buy seperate 3pinheader one.
+
+---
+## Scheme
+![alt text](image.png)
+* Pins and connections done using global labels. Scheme seperated in 6 parts.
+* Left top corner is TYPE C and Low Voltage regulator.
+* Center top is Decoupling capacitors.
+* Right top corner is Flash Memory connection scheme.
+* Bottom left corner is Pinout for pinheaders
+* Center is MCU RPI2040 connection
+* and center right is Crystall oscillator connection.
+
+---
+## PCB layout
+
+#### Front copper Layer and Back Copper Layer
+![alt text](image-1.png) ![alt text](image-2.png)
+( SilkScreen hidden )
+
+## front and back with silkscreen
+![alt text](image-5.png) ![alt text](image-4.png)
+
+## 3D view front and back
+![alt text](<Screenshot 2026-10-24 164147-1.png>)
+![alt text](<Screenshot 2026-10-24 164156-1.png>)
+
+
+# Thank you, hack club!
