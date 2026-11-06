@@ -10,6 +10,15 @@ Then you have to gave a memory to the brain, for which QSPI flash memory is resp
 Also, we can't forget about power for which we use USB type C female port.
 And we have to decrease it from 5V to 3V3 by linear stabilizator. Apart from that we have to handle noises for which decoupling capacitors where used. Of course you have to add your soul when making project. My piece of soul is in silksreen art.
  
+### Unique Feature
+- LiPo battery Charging 
+The devboard includes capabilities to operate with LiPo Battery. This is achieved by 2 parts.
+1. Power Switching Mosfet AO3401A allows to operate devboard on USB C, when connected. And seemlessly switches power supply to batter when USB C removed. This significantly Improves mobility of this devboard.
+2. MCP73831 Main Charger IC, which allows to charge the battery while USB C is connected. It also provides information whether battery is currently charging or fully charged on GPIO 25. On GPIO 29 it the voltage divider is set and the percentage of battery can be seen.
+
+## Basic Firmware
+Basic firmware is writting in micropython. By default, when connected to device it sends battery connection and percentage charge information over serial.
+
 ---
 ## BOM
 | Name | Value | Quantity | Price | Min Buy Price | Link |
@@ -29,13 +38,17 @@ And we have to decrease it from 5V to 3V3 by linear stabilizator. Apart from tha
 | LDO Voltage Regulator SOT-23 | MCP1700x-330xxTT | 1pc |$0.235 |$2.35| [link](https://www.aliexpress.com/item/1005010457470744.html?spm=a2g0o.productlist.main.2.91dc494alLmY3r&algo_pvid=7206a0b7-3823-4af5-9f48-fe7043e7341e&algo_exp_id=7206a0b7-3823-4af5-9f48-fe7043e7341e-1&pdp_ext_f=%7B%22order%22%3A%222%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%212.35%212.35%21%21%212.57%212.57%21%402101de2517928392481461068e10fb%2112000052477027046%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=GqBMlJZrs2cj&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005010457470744%7C_p_origin_prod%3A) |
 | NOR Flash Memory USON-8 (128Mb) | W25Q128JVS | 1pc |$0.61|$0.61 | [link](https://www.aliexpress.com/item/1005009949894136.html?spm=a2g0o.productlist.main.2.5a14104daznULO&algo_pvid=a36b1a77-d764-4ee7-8480-798defc4a4a6&algo_exp_id=a36b1a77-d764-4ee7-8480-798defc4a4a6-1&pdp_ext_f=%7B%22order%22%3A%22340%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%210.62%210.61%21%21%214.52%214.52%21%40210311c217928392961714942e0ff9%2112000050659133711%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=moexlDes1oED&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005009949894136%7C_p_origin_prod%3A) |
 | Crystal SMD 3225-4Pin | 12MHz | 1pc | $0.3| $2.75| [link](https://www.aliexpress.com/item/1005007282073350.html?spm=a2g0o.productlist.main.1.42a54506vpAb9t&algo_pvid=00cde798-dc2c-4c5d-b74c-cf3e82a695be&algo_exp_id=00cde798-dc2c-4c5d-b74c-cf3e82a695be-0&pdp_ext_f=%7B%22order%22%3A%2210%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%212.75%212.75%21%21%213.01%213.01%21%402101d9ef17928393249016774e10b8%2112000040057852652%21sea%21FI%210%21ABX%211%210%21n_tag%3A-29910%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=GtFPoNpVzfLV&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A1005007282073350%7C_p_origin_prod%3A) |
+|J5|JSTPH 2pin|1pc|$0.5|$2.5|[link](https://www.aliexpress.com/item/4001253349808.html?spm=a2g0o.productlist.main.1.4730752efq3Fm9&algo_pvid=fb11f401-324a-4e82-91e6-cf09d6a6ee1a&algo_exp_id=fb11f401-324a-4e82-91e6-cf09d6a6ee1a-0&pdp_ext_f=%7B%22order%22%3A%22124%22%2C%22eval%22%3A%221%22%2C%22fromPage%22%3A%22search%22%7D&pdp_npi=6%40dis%21EUR%214.52%212.49%21%21%2132.98%2118.14%21%402101ca9517939409376543958e1017%2110000015480202193%21sea%21FI%210%21X%211%210%21n_tag%3A-29919%3Bd%3A6cea0dff%3Bm03_new_user%3A-29895&curPageLogUid=X3tKrtRrFuud&utparam-url=scene%3Asearch%7Cquery_from%3A%7Cx_object_id%3A4001253349808%7C_p_origin_prod%3A)|
+|U4|MCP73831T|1pc|$0.35|$1.5||
+|Q1|AO3401A|1pc|$0.10|$1||
+|D1|1N5819|1pc|$0.08|$0.8||
 
-*total: ~$26 (if handsoldered) and $69 if to use JLCPCB assempbly* \
+*total: ~$30 (if handsoldered) and $76 if to use JLCPCB assempbly* \
 **pinheader needs 3 pc, cause instead of ordering 3pin pinheader, you can break from 20pin pinheaders. Anyways you need to order 5 at least, so its cheaper not to buy seperate 3pinheader one.
 
 ---
 ## Scheme
-![alt text](image.png)
+![alt text](images/scheme.png)
 * Pins and connections done using global labels. Scheme seperated in 6 parts.
 * Left top corner is TYPE C and Low Voltage regulator.
 * Center top is Decoupling capacitors.
@@ -48,15 +61,15 @@ And we have to decrease it from 5V to 3V3 by linear stabilizator. Apart from tha
 ## PCB layout
 
 #### Front copper Layer and Back Copper Layer
-![alt text](image-1.png) ![alt text](image-2.png)
+![alt text](images/PCBfrontCopper.png) ![alt text](images/PCBbackCopper.png)
 ( SilkScreen hidden )
 
 ## front and back with silkscreen
-![alt text](image-5.png) ![alt text](image-4.png)
+![alt text](images/image-4.png) ![alt text](images/image-5.png)
 
 ## 3D view front and back
-![alt text](<Screenshot 2026-10-24 164147-1.png>)
-![alt text](<Screenshot 2026-10-24 164156-1.png>)
+![alt text](images/3Dback.png)
+![alt text](images/3Dfront.png)
 
 
 # Thank you, hack club!
