@@ -14,11 +14,11 @@ while True:
     
     # reading GPIO29 which is connected to +Vbat by voltage dividers 100k 
     vbat = adc.read_u16() * 6.6/65535
-    # percentage charge assumed that 4.2 = 100% and 3.2V is 0%, so the difference is intermediate percentage
-    percentage_charge = int((vbat-3.2)*100)
+    # percentage charge assumed that 4.2 = 100% and 3.1V is 0%, so the difference is intermediate percentage
+    percentage_charge = int((vbat-3.1)*100)
 
 
-    if vbat > 3:
+    if vbat > 3.1:
         print(f'Battery Connected')
         print(f'Charge is: {percentage_charge}')
     else:

@@ -1,7 +1,7 @@
 # NiroRPI development Board
 Customizing RPI2040 devboard and learning! \
 [![View PCB on KiCanvas](https://hack.club/pcb-badge)](https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2FNurazkhan%2FNiroRPI-devboard%2Ftree%2Fmain%2FPCB)
-![alt text](<Screenshot 2026-10-24 164147.png>)
+![alt text](images/3Dfront.png)
 
 ---
 The NiroRPI board consists of several parts.
