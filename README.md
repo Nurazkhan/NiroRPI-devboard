@@ -42,6 +42,7 @@ Basic firmware is writting in micropython. By default, when connected to device 
 |U4|MCP73831T|1pc|$0.35|$1.5||
 |Q1|AO3401A|1pc|$0.10|$1||
 |D1|1N5819|1pc|$0.08|$0.8||
+|Mini Hotplate|65W|1pc|$20|$20|[link](https://www.aliexpress.com/item/1005007016135854.html)|
 
 *total: ~$30 (if handsoldered) and $76 if to use JLCPCB assempbly* \
 **pinheader needs 3 pc, cause instead of ordering 3pin pinheader, you can break from 20pin pinheaders. Anyways you need to order 5 at least, so its cheaper not to buy seperate 3pinheader one.
